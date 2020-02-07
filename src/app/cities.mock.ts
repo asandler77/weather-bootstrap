@@ -1,5 +1,8 @@
 export const CITIES: string[] = [
-  'San Francisco, US',
-  'Dakar, Senegal',
-  'Honololu, Hawaii'
+  'Jerusalem',
+  'Tel Aviv',
+  'Moscow',
+  'San Francisco',
+  'Birobidzhan',
+  'New York'
 ];
