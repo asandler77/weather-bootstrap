@@ -11,6 +11,7 @@ export class WeatherComponent implements OnInit {
   public weatherSearchForm: FormGroup;
   public weatherData: any;
   fullImagePath: string;
+  citiesList: string[];
   constructor(private formBuilder: FormBuilder,
               private apixuService: ApixuService) {
     this.fullImagePath = '/assets/images/partial.png';
@@ -18,8 +19,12 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit() {
     this.weatherSearchForm = this.formBuilder.group({location: ['']});
+    this.getCities();
   }
 
+  getCities() {
+    this.apixuService.getCities().subscribe(data => this.citiesList = data);
+  }
 
   sentToAPIXU(formValues: string) {
     this.apixuService.getWeather(formValues)
